@@ -1,0 +1,94 @@
+<style>
+body {
+	background-color:#282828;
+	background-image:url("img/header.png");
+	background-repeat:repeat-x;
+	color:white;
+}
+
+h1 {
+	font-family:"Lucida Console", Arial, Verdana;
+	font-size:27px;
+	float:right;
+}
+
+img {
+	float:left;
+}
+
+#ok {
+	color:red;
+}
+</style>
+
+<html>
+	<body onload="javascript:getFields()">
+		<div class="header"><img src="icons/icon128.png" alt="chromote" height="65" width="65"/><h1>Chromote - Réglages</h1></div>
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<p>Code télécommande: <input type="text" id="code" name="code" size="15" maxlength="8" /><br />
+		   Numéro du boitier: &nbsp; &nbsp; <select name="hd" id="hd" >
+												<option value="hd1">Boitier n°1 (HD1)</option>
+												<option value="hd2">Boitier n°2 (HD2)</option>
+												<option value="hd3">Boitier n°3 (HD3)</option>
+											</select>
+		</p>
+		<p><span style="text-decoration:underline;">Aide</span>: le code télécommande de votre Freebox se trouve dans Paramètres > Informations Générales. <br />Si vous ne possédez qu'une seule Freebox, laissez le numéro du boitier sur HD1.</p>
+		<button type="button" name="b_save" id="ok_button" onclick="javascript:saveFields()">Enregistrer</button> <span id="ok"></span>
+	</body>
+</html>
+
+<script>
+  function getFields() {
+	var codeField= document.getElementById('code');
+	var hdSelect = document.getElementById('hd');
+	var codeValue = getItem("code");
+	var hdValue = getItem("hd");
+	
+	if(codeValue != "undefined") {
+	codeField.value = codeValue;
+	}
+	
+	if(hdValue != "undefined") {
+	hdSelect.value = hdValue;
+	}
+  }
+  
+  function saveFields() {
+	var codeField= document.getElementById('code');
+	var hdSelect = document.getElementById('hd');
+	var ok_button = document.getElementById('ok');
+	
+	setItem("code", codeField.value);
+	setItem("hd", hdSelect.value);
+	ok_button.textContent = "Enregistré !";
+	ok_button.disabled = true;
+  }
+  
+  function setItem(key, value) {
+    try {
+      window.localStorage.removeItem(key);
+      window.localStorage.setItem(key, value);
+    }
+	catch(e) {
+      console.log("Error inside setItem");
+      console.log(e);
+    }
+  }
+  function getItem(key) {
+    var value;
+    try {
+      value = window.localStorage.getItem(key);
+    }
+	catch(e) {
+      console.log("Error inside getItem() for key:" + key);
+	  console.log(e);
+	  value = "null";
+    }
+    return value;
+  }
+</script>
+
