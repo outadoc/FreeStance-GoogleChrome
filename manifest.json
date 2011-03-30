@@ -3,16 +3,14 @@
       "default_icon": "icons/icon.png",
       "popup": "popup.html"
    },
-   "description": "Contr\u00F4lez votre Freebox depuis votre navigateur !",
+   "description": "Contrôlez votre Freebox depuis votre navigateur !",
    "icons": {
       "128": "icons/icon128.png",
       "16": "icons/icon16.png",
       "32": "icons/icon32.png",
       "48": "icons/icon48.png"
    },
-   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDX1l2WtptV1dLqCpNdVMCcKmXo+UTYjN0l7sA5k6U823aFgtRcqlN2DVtru5JAqmasYLQ8erR+HCSHvp5aHOBNBlz3Mc0bxA3gRC/jIniSsGZiPN5a0XfDwhJKvWTA//t4VrC9yC+MLy6miiWKDvLNX2sKWKGrFZaZCxArZKxfDQIDAQAB",
    "name": "Chromote",
    "options_page": "options.html",
-   "update_url": "http://clients2.google.com/service/update2/crx",
-   "version": "1.5.1"
+   "version": "1.6"
 }
