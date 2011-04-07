@@ -49,6 +49,9 @@ body {
 <script>
 
 var firstTimeStamp;
+var code;
+var hd;
+var gotVariables = false;
 
 function mousedown()
 {
@@ -69,6 +72,13 @@ function mouseup(key)
 		var secondTimeStamp = date.getTime();
 		var difference = secondTimeStamp - firstTimeStamp;
 	
+		if(gotVariables != true)
+		{
+			code = getItem("code");
+			hd = getItem("hd");
+			gotVariables = true;
+		}
+
 		var req = null; 
 		req = new XMLHttpRequest(); 
 
@@ -77,7 +87,7 @@ function mouseup(key)
 		else
 			var longString = "";
 		
-		req.open("GET", "http://" + getItem("hd") + ".freebox.fr/pub/remote_control?code=" + getItem("code") + "&key=" + key + longString, false); 
+		req.open("GET", "http://" + hd + ".freebox.fr/pub/remote_control?code=" + code + "&key=" + key + longString, false); 
 		req.send(null); 
 		firstTimeStamp = 0;
 	}
