@@ -26,6 +26,9 @@ img {
 </style>
 
 <html>
+	<head>
+		<title>Chromote - Réglages</title>
+	</head>
 	<body onload="javascript:getFields()">
 		<div class="header"><img src="icons/icon128.png" alt="chromote" height="65" width="65"/><h1>Chromote - Réglages</h1></div>
 		<br />
@@ -33,18 +36,17 @@ img {
 		<br />
 		<br />
 		<br />
-		<p>Code télécommande: <input type="text" id="code" name="code" size="15" maxlength="8" /><br />
-		   Numéro du boitier: &nbsp; &nbsp; <select name="hd" id="hd" >
+		<b><p>Code télécommande: <input type="text" id="code" name="code" size="15" maxlength="8" /><br />
+		   Numéro du boitier: &nbsp; <select name="hd" id="hd" >
 												<option value="hd1">Boitier n°1 (HD1)</option>
 												<option value="hd2">Boitier n°2 (HD2)</option>
 												<option value="hd3">Boitier n°3 (HD3)</option>
-											</select>
+											</select></b>
 		</p>
+		<button type="button" name="b_save" id="ok_button" onclick="javascript:saveFields()">Enregistrer</button> <span id="oktext"></span>
 		<p><span style="text-decoration:underline;">Aide</span>: le code télécommande de votre Freebox se trouve dans Paramètres > Informations Générales. <br />Si vous ne possédez qu'une seule Freebox, laissez le numéro du boitier sur HD1.</p>
-		<button type="button" name="b_save" id="ok_button" onclick="javascript:saveFields()">Enregistrer</button> <span id="ok"></span>
 		
 		<br />
-		<br /><br />
 		<br />
 		Liens: <br />
 		<ul>
@@ -52,11 +54,12 @@ img {
 			<li><a href="http://outadoc.fr/">Site du développeur</a></li>
 			<li><a href="http://twitter.com/#!/outadoc">Twitter du développeur</a></li>
 		</ul>
+
 		<p>Changelog :<br />
 		<ul>
-			<li><u>1.7.1</u> : Ajout d'informations dans la page des réglages</li>
-			<li><u>1.7</u> : Support du clic long (même action qu'avec la vraie télécommande)<br />Amélioration des performances</li>
-			<li><u>1.6</u> : Ajout des touches Play/Pause et Stop</li>
+			<li><span style="text-decoration:underline;">1.7.1</span> : Ajout d'informations dans la page des réglages</li>
+			<li><span style="text-decoration:underline;">1.7</span> : Support du clic long (même action qu'avec la vraie télécommande)<br />Amélioration des performances</li>
+			<li><span style="text-decoration:underline;">1.6</span> : Ajout des touches Play/Pause et Stop</li>
 		</ul>
 		</p>
 	</body>
@@ -81,12 +84,11 @@ img {
   function saveFields() {
 	var codeField= document.getElementById('code');
 	var hdSelect = document.getElementById('hd');
-	var ok_button = document.getElementById('ok');
+	var ok_label = document.getElementById('oktext');
 	
 	setItem("code", codeField.value);
 	setItem("hd", hdSelect.value);
-	ok_button.textContent = "Enregistré !";
-	ok_button.disabled = true;
+	ok_label.textContent = "Enregistré !";
   }
   
   function setItem(key, value) {
