@@ -20,9 +20,9 @@ img {
 	float:left;
 }
 
-#ok {
+#oktext {
 	color:red;
-}
+}	var ok_label = document.getElementById('oktext');
 </style>
 
 <html>
@@ -82,13 +82,20 @@ img {
   }
   
   function saveFields() {
-	var codeField= document.getElementById('code');
+	var codeField = document.getElementById('code');
 	var hdSelect = document.getElementById('hd');
 	var ok_label = document.getElementById('oktext');
 	
 	setItem("code", codeField.value);
 	setItem("hd", hdSelect.value);
 	ok_label.textContent = "Enregistré !";
+	var timeout = setTimeout("clearSavedLabel()", 2000);
+  }
+
+  function clearSavedLabel()
+  {
+	var ok_label = document.getElementById('oktext');
+	ok_label.textContent = "";
   }
   
   function setItem(key, value) {
