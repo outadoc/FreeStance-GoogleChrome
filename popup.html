@@ -1,10 +1,8 @@
-<style>
-body {
-	background-color:#1C1C1C;
-	margin:0px 0px 0px 0px;
-}
-</style>
 <html>
+    <head>
+        <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+        <script type="text/javascript" src="js/main.js"></script> 
+    </head>
 	<body>
 		<img src="img/bg.png" alt="Chromote" usemap ="#remote" />
 		
@@ -45,57 +43,3 @@ body {
 		</map>
 	</body>
 </html>
-
-<script>
-
-var firstTimeStamp;
-var code;
-var hd;
-var gotVariables = false;
-
-function mousedown()
-{
-	var date = new Date();
-	firstTimeStamp = date.getTime();
-}
-
-function mouseup(key)
-{
-	if(getItem("code") == null)
-	{
-		firstTimeStamp = 0;
-		window.open("options.html");
-	}
-	else
-	{
-		var date = new Date();
-		var secondTimeStamp = date.getTime();
-		var difference = secondTimeStamp - firstTimeStamp;
-	
-		if(gotVariables != true)
-		{
-			code = getItem("code");
-			hd = getItem("hd");
-			gotVariables = true;
-		}
-
-		var req = null; 
-		req = new XMLHttpRequest(); 
-
-		if(difference >= 700)
-			var longString = "&long=true";
-		else
-			var longString = "";
-		
-		req.open("GET", "http://" + hd + ".freebox.fr/pub/remote_control?code=" + code + "&key=" + key + longString, false); 
-		req.send(null); 
-		firstTimeStamp = 0;
-	}
-}
-
-function getItem(key) {
-    var value;
-	value = window.localStorage.getItem(key);
-    return value;
-}
-</script>

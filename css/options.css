@@ -1,0 +1,36 @@
+body {
+	background-color:#282828;
+	background-image:url("../img/header.png");
+	background-repeat:repeat-x;
+	color:white;
+}
+
+a {
+	color:white;
+}
+
+h1 {
+	font-family:"Lucida Console", Arial, Verdana;
+	font-size:27px;
+	float:right;
+}
+
+.header img {
+	float:left;
+}
+
+#oktext {
+	color:red;
+}
+
+.logo {
+    height:55px;
+    width:170px;
+    float:right;
+}
+
+.metadata {
+    border-style:solid;
+    padding:10px;
+    margin-bottom:10px;
+}
