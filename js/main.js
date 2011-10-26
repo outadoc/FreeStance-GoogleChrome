@@ -1,48 +1,50 @@
-var firstTimeStamp;
 var code;
 var hd;
-var gotVariables = false;
 
-function mousedown()
+var hasBeenPressed;
+var longPressTimeoutID;
+
+function mousedown(key)
 {
 	var date = new Date();
 	firstTimeStamp = date.getTime();
+	
+	longPressTimeoutID = setTimeout(function(){
+		callKey(key, true);
+		hasBeenPressed = true;
+	}, 600);
 }
 
 function mouseup(key)
 {
-	if(getItem("code") == null)
-	{
-		firstTimeStamp = 0;
+	if(code == null)
 		window.open("options.html");
-	}
+		
 	else
 	{
-		var date = new Date();
-		var secondTimeStamp = date.getTime();
-		var difference = secondTimeStamp - firstTimeStamp;
-	
-		if(gotVariables != true)
+		if(!hasBeenPressed)
 		{
-			code = getItem("code");
-			hd = getItem("hd");
-			gotVariables = true;
+			clearTimeout(longPressTimeoutID);
+			longPressTimeoutID = null;
+			callKey(key, false);
 		}
-
-		if(difference >= 700)
-			var longString = "&long=true";
-		else
-			var longString = "";
-		
-        var req = new XMLHttpRequest(); 
-		req.open("GET", "http://" + hd + ".freebox.fr/pub/remote_control?code=" + code + "&key=" + key + longString, true); 
-		req.send(null); 
-		firstTimeStamp = 0;
 	}
+	
+	hasBeenPressed = false;
 }
 
-function getItem(key) {
-    var value;
-	value = window.localStorage.getItem(key);
-    return value;
+function getItem(key)
+{
+	return window.localStorage.getItem(key);
 }
+
+function callKey(key, isLong)
+{
+    //var req = new XMLHttpRequest(); 
+	//req.open("GET", "http://" + hd + ".freebox.fr/pub/remote_control?code=" + code + "&key=" + key + "&long=" + isLong.toString(), true);
+	console.log('calling url for hd=' + hd + ', code=' + code + ', key=' + key + '; long press:' + isLong.toString());
+	//req.send(null);
+}
+
+code = getItem("code");
+hd = getItem("hd");
