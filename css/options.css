@@ -3,6 +3,7 @@ body {
 	background-image:url("../img/header.png");
 	background-repeat:repeat-x;
 	color:white;
+	font-family:"Helvetica", Arial;
 }
 
 a {
@@ -30,7 +31,21 @@ h1 {
 }
 
 .metadata {
-    border-style:solid;
     padding:10px;
-    margin-bottom:10px;
+}
+
+.parameters {
+	border-style:solid;
+    padding:5px;
+    border-width:2px;
+    display:inline-block;
+    margin-top:5px;
+}
+
+.title {
+	font-weight:bold;
+}
+
+#ok_button {
+	font-size:16px;
 }

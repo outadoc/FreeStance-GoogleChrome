@@ -3,43 +3,47 @@
         <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
         <script type="text/javascript" src="js/main.js"></script> 
     </head>
-	<body>
-		<img src="img/bg.png" alt="Chromote" usemap ="#remote" />
-		
+	<body onunload="popupUnload()" onload="popupLoad()">
+		<img src="img/bg.png" alt="freestance" usemap ="#remote" />
 		<map name="remote">
-			<area shape="rect" href="#" coords="5,6,30,23" onMousedown="mousedown()" onMouseup="mouseup('power')" alt="power" />
+			<area shape="rect" href="#" coords="5,6,30,23" onmousedown="mousedown('power')" onmouseup="mouseup('power')" alt="power" />
 			
-			<area shape="rect" href="#" coords="37,64,78,97" onMousedown="mousedown()" onMouseup="mouseup('ok')" alt="ok" />
-			<area shape="rect" href="#" coords="37,46,74,62" onMousedown="mousedown()" onMouseup="mouseup('up')" alt="up" />
-			<area shape="rect" href="#" coords="80,65,97,97" onMousedown="mousedown()" onMouseup="mouseup('right')" alt="right" />
-			<area shape="rect" href="#" coords="18,66,33,93" onMousedown="mousedown()" onMouseup="mouseup('left')" alt="left" />
-			<area shape="rect" href="#" coords="42,104,76,118" onMousedown="mousedown()" onMouseup="mouseup('down')" alt="down" />
+			<area shape="rect" href="#" coords="37,64,78,97" onmousedown="mousedown('ok')" onmouseup="mouseup('ok')" alt="ok" />
+			<area shape="rect" href="#" coords="37,46,74,62" onmousedown="mousedown('up')" onmouseup="mouseup('up')" alt="up" />
+			<area shape="rect" href="#" coords="80,65,97,97" onmousedown="mousedown('right')" onmouseup="mouseup('right')" alt="right" />
+			<area shape="rect" href="#" coords="18,66,33,93" onmousedown="mousedown('left')" onmouseup="mouseup('left')" alt="left" />
+			<area shape="rect" href="#" coords="42,104,76,118" onmousedown="mousedown('down')" onmouseup="mouseup('down')" alt="down" />
 			
-			<area shape="rect" href="#" coords="31,134,85,163" onMousedown="mousedown()" onMouseup="mouseup('home')" alt="free" />
+			<area shape="rect" href="#" coords="31,134,85,163" onmousedown="mousedown('home')" onmouseup="mouseup('home')" alt="free" />
 			
-			<area shape="rect" href="#" coords="18,173,47,210" onMousedown="mousedown()" onMouseup="mouseup('vol_inc')" alt="vol_inc" />
-			<area shape="rect" href="#" coords="18,220,47,257" onMousedown="mousedown()" onMouseup="mouseup('vol_dec')" alt="vol_dec" />
-			<area shape="rect" href="#" coords="68,173,96,210" onMousedown="mousedown()" onMouseup="mouseup('prgm_inc')" alt="prgm_inc" />
-			<area shape="rect" href="#" coords="68,220,96,257" onMousedown="mousedown()" onMouseup="mouseup('prgm_dec')" alt="prgm_dec" />
-			<area shape="circle" href="#" coords="57,214,9" onMousedown="mousedown()" onMouseup="mouseup('mute')" alt="mute" />
+			<area shape="rect" href="#" coords="18,173,47,210" onmousedown="mousedown('vol_inc')" onmouseup="mouseup('vol_inc')" alt="vol_inc" />
+			<area shape="rect" href="#" coords="18,220,47,257" onmousedown="mousedown('vol_dec')" onmouseup="mouseup('vol_dec')" alt="vol_dec" />
+			<area shape="rect" href="#" coords="68,173,96,210" onmousedown="mousedown('prgm_inc')" onmouseup="mouseup('prgm_inc')" alt="prgm_inc" />
+			<area shape="rect" href="#" coords="68,220,96,257" onmousedown="mousedown('prgm_dec')" onmouseup="mouseup('prgm_dec')" alt="prgm_dec" />
+			<area shape="circle" href="#" coords="57,214,9" onmousedown="mousedown('mute')" onmouseup="mouseup('mute')" alt="mute" />
 			
-			<area shape="rect" href="#" coords="6,274,29,293" onMousedown="mousedown()" onMouseup="mouseup('red')" alt="red" />
-			<area shape="rect" href="#" coords="31,274,56,293" onMousedown="mousedown()" onMouseup="mouseup('blue')" alt="blue" />
-			<area shape="rect" href="#" coords="59,274,83,293" onMousedown="mousedown()" onMouseup="mouseup('green')" alt="green" />
-			<area shape="rect" href="#" coords="86,273,109,293" onMousedown="mousedown()" onMouseup="mouseup('yellow')" alt="yellow" />
+			<area shape="rect" href="#" coords="6,274,29,293" onmousedown="mousedown('red')" onmouseup="mouseup('red')" alt="red" />
+			<area shape="rect" href="#" coords="31,274,56,293" onmousedown="mousedown('blue')" onmouseup="mouseup('blue')" alt="blue" />
+			<area shape="rect" href="#" coords="59,274,83,293" onmousedown="mousedown('green')" onmouseup="mouseup('green')" alt="green" />
+			<area shape="rect" href="#" coords="86,273,109,293" onmousedown="mousedown('yellow')" onmouseup="mouseup('yellow')" alt="yellow" />
 			
-			<area shape="rect" href="#" coords="4,213,38,339" onMousedown="mousedown()" onMouseup="mouseup('1')" alt="1" />
-			<area shape="rect" href="#" coords="40,313,74,339" onMousedown="mousedown()" onMouseup="mouseup('2')" alt="2" />
-			<area shape="rect" href="#" coords="76,313,110,339" onMousedown="mousedown()" onMouseup="mouseup('3')" alt="3" />
-			<area shape="rect" href="#" coords="4,345,38,373" onMousedown="mousedown()" onMouseup="mouseup('4')" alt="4" />
-			<area shape="rect" href="#" coords="40,345,74,373" onMousedown="mousedown()" onMouseup="mouseup('5')" alt="5" />
-			<area shape="rect" href="#" coords="76,345,110,373" onMousedown="mousedown()" onMouseup="mouseup('6')" alt="6" />
-			<area shape="rect" href="#" coords="4,380,38,406" onMousedown="mousedown()" onMouseup="mouseup('7')" alt="7" />
-			<area shape="rect" href="#" coords="40,380,74,406" onMousedown="mousedown()" onMouseup="mouseup('8')" alt="8" />
-			<area shape="rect" href="#" coords="76,380,110,406" onMousedown="mousedown()" onMouseup="mouseup('9')" alt="9" />
-			<area shape="rect" href="#" coords="4,412,38,440" onMousedown="mousedown()" onMouseup="mouseup('play')" alt="play" />
-			<area shape="rect" href="#" coords="40,412,74,440" onMousedown="mousedown()" onMouseup="mouseup('0')" alt="0" />
-			<area shape="rect" href="#" coords="76,412,110,440" onMousedown="mousedown()" onMouseup="mouseup('stop')" alt="stop" />
+			<area shape="rect" href="#" coords="4,313,38,339" onmousedown="mousedown('1')" onmouseup="mouseup('1')" alt="1" />
+			<area shape="rect" href="#" coords="40,313,74,339" onmousedown="mousedown('2')" onmouseup="mouseup('2')" alt="2" />
+			<area shape="rect" href="#" coords="76,313,110,339" onmousedown="mousedown('3')" onmouseup="mouseup('3')" alt="3" />
+			<area shape="rect" href="#" coords="4,345,38,373" onmousedown="mousedown('4')" onmouseup="mouseup('4')" alt="4" />
+			<area shape="rect" href="#" coords="40,345,74,373" onmousedown="mousedown('5')" onmouseup="mouseup('5')" alt="5" />
+			<area shape="rect" href="#" coords="76,345,110,373" onmousedown="mousedown('6')" onmouseup="mouseup('6')" alt="6" />
+			<area shape="rect" href="#" coords="4,380,38,406" onmousedown="mousedown('7')" onmouseup="mouseup('7')" alt="7" />
+			<area shape="rect" href="#" coords="40,380,74,406" onmousedown="mousedown('8')" onmouseup="mouseup('8')" alt="8" />
+			<area shape="rect" href="#" coords="76,380,110,406" onmousedown="mousedown('9')" onmouseup="mouseup('9')" alt="9" />
+			<area shape="rect" href="#" coords="4,412,38,440" onmousedown="mousedown('play')" onmouseup="mouseup('play')" alt="play" />
+			<area shape="rect" href="#" coords="40,412,74,440" onmousedown="mousedown('0')" onmouseup="mouseup('0')" alt="0" />
+			<area shape="rect" href="#" coords="76,412,110,440" onmousedown="mousedown('stop')" onmouseup="mouseup('stop')" alt="stop" />
 		</map>
+		<select name="profile" id="profile" onchange="getValues()">
+			<option value="1" selected="selected">Profil 1</option>
+			<option value="2">Profil 2</option>
+			<option value="3">Profil 3</option>
+		</select>
 	</body>
 </html>
