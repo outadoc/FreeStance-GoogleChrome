@@ -19,5 +19,11 @@ function saveFields() {
 	setItem('profile' + profileSelect.value + '.hd', hdSelect.value);
 }
 
-window.onload = getFields;
-window.onunload = saveFields;
+window.addEventListener('onload', getFields);
+window.addEventListener('onunload', saveFields);
+
+window.addEventListener('onload', function() {
+	(document.getElementById('profile')).addEventListener('onchange', getFields);
+	(document.getElementById('code')).addEventListener('onchange', saveFields);
+	(document.getElementById('hd')).addEventListener('onchange', saveFields);
+});
