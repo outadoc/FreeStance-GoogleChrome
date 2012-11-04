@@ -55,3 +55,7 @@ h1 small {
 .help ul {
 	-webkit-padding-start: 30px;
 }
+
+.ad strong {
+	color: #ce0000;
+}
