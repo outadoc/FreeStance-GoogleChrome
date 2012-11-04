@@ -18,3 +18,6 @@ function saveFields() {
 	setItem('profile' + profileSelect.value + '.code', codeField.value);
 	setItem('profile' + profileSelect.value + '.hd', hdSelect.value);
 }
+
+window.onload = getFields;
+window.onunload = saveFields;
