@@ -48,15 +48,12 @@ function getValues()
 	hd = getItem('profile' + profileSelect.value + '.hd', 1);
 }
 
-function popupUnload()
-{
+$(window).unload(function() {
 	setItem('profileToUse', profileSelect.value);
-}
+});
 
-function popupLoad()
-{
+$(window).load(function() {
 	profileSelect = document.getElementById('profile');
 	profileSelect.value = getItem('profileToUse', 1);
-	
 	getValues();
-}
+});
