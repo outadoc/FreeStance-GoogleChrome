@@ -50,3 +50,5 @@ $(window).load(function() {
 	profileSelect.value = getItem('profileToUse', 1);
 	getValues();
 });
+
+$('#profile').change(getValues);
