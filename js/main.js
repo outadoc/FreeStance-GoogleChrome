@@ -36,10 +36,10 @@ function mouseup(key)
 
 function callKey(key, isLong)
 {
-    //var req = new XMLHttpRequest(); 
-	//req.open("GET", "http://" + hd + ".freebox.fr/pub/remote_control?code=" + code + "&key=" + key + "&long=" + isLong.toString(), true);
+    var req = new XMLHttpRequest(); 
+	req.open("GET", "http://" + "hd" + hd + ".freebox.fr/pub/remote_control?code=" + code + "&key=" + key + "&long=" + isLong.toString(), true);
 	console.log('calling url for hd=' + hd + ', code=' + code + ', key=' + key + '; long press:' + isLong.toString());
-	//req.send(null);
+	req.send(null);
 }
 
 function getValues()
