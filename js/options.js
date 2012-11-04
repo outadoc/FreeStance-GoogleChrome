@@ -8,6 +8,8 @@ function getFields() {
 	
 	codeField.value = codeValue;
 	hdSelect.value = hdValue;
+	
+	console.log('got fields');
 }
   
 function saveFields() {
@@ -17,13 +19,13 @@ function saveFields() {
 	
 	setItem('profile' + profileSelect.value + '.code', codeField.value);
 	setItem('profile' + profileSelect.value + '.hd', hdSelect.value);
+	
+	console.log('set fields');
 }
 
-window.addEventListener('onload', getFields);
-window.addEventListener('onunload', saveFields);
+$(window).load(getFields);
+$(window).unload(saveFields);
 
-window.addEventListener('onload', function() {
-	(document.getElementById('profile')).addEventListener('onchange', getFields);
-	(document.getElementById('code')).addEventListener('onchange', saveFields);
-	(document.getElementById('hd')).addEventListener('onchange', saveFields);
-});
+$('#profile').change(getFields);
+$('#code').change(saveFields);
+$('#hd').change(saveFields);
