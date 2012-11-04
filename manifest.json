@@ -1,7 +1,7 @@
 {
    "browser_action": {
       "default_icon": "icons/icon.png",
-      "popup": "popup.html"
+      "default_popup": "popup.html"
    },
    "description": "Contrôlez votre Freebox depuis votre navigateur !",
    "icons": {
