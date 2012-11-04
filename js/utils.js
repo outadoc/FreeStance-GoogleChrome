@@ -1,5 +1,4 @@
-function getItem(key, defaultReturn)
-{
+function getItem(key, defaultReturn) {
 	try {
 	    var value = window.localStorage.getItem(key);
 	    if(value == null)
@@ -12,8 +11,7 @@ function getItem(key, defaultReturn)
 	return value;
 }
 
-function setItem(key, value) 
-{
+function setItem(key, value) {
 	try {
 		window.localStorage.removeItem(key);
 		window.localStorage.setItem(key, value);
@@ -23,8 +21,7 @@ function setItem(key, value)
 	}
 }
 
-function removeItem(key)
-{
+function removeItem(key) {
 	try {
 		window.localStorage.removeItem(key);
 	} catch(e) {
@@ -37,8 +34,7 @@ function removeItem(key)
 var code = getItem('code', null);
 var hd = getItem('hd', null);
 
-if(code != null && hd != null)
-{
+if(code != null && hd != null) {
 	setItem('profile1.code', code);
 	setItem('profile1.hd', hd.replace('hd', ''));
 	

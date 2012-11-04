@@ -1,5 +1,4 @@
-function getFields() 
-{
+function getFields() {
 	var profileSelect = document.getElementById('profile');
 	var codeField = document.getElementById('code');
 	var hdSelect = document.getElementById('hd');
@@ -11,8 +10,7 @@ function getFields()
 	hdSelect.value = hdValue;
 }
   
-function saveFields()
-{
+function saveFields() {
 	var profileSelect = document.getElementById('profile');
 	var codeField = document.getElementById('code');
 	var hdSelect = document.getElementById('hd');
