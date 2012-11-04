@@ -1,62 +1,67 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>FreeStance - Réglages</title>
+		<title>FreeStance - Options</title>
         <link rel="stylesheet" type="text/css" media="screen" href="css/options.css" />
         <script type="text/javascript" src="js/utils.js"></script>
         <script type="text/javascript" src="js/options.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	</head>
 	<body>
-		<div class="header"><img src="icons/icon128.png" alt="freestance" height="65" width="65"/><h1>FreeStance - Réglages</h1></div>
+		<div class="header">
+			<h1>FreeStance <small>- Options</small></h1>
+			<a href="http://dev.outadoc.fr/"><img src="img/outadev.png" alt="outa[dev]" /></a>
+		</div>
 		<div class="settings">
-			<span class="title">Profil à modifier :</span>&nbsp;
+			<label for="profile">Profil à modifier :</label>
 			<select name="profile" id="profile" onchange="getFields()">
 				<option value="1" selected="selected">Profil 1</option>
 				<option value="2">Profil 2</option>
 				<option value="3">Profil 3</option>
-			</select><br />
-			<span class="parameters">
-				<span class="title">Code télécommande :</span>
+			</select>
+			<div class="parameters">
+				<label for="code">Code télécommande :</span>
 				<input type="text" id="code" name="code" size="15" maxlength="8" onchange="saveFields()" /><br />
-				<span class="title">Numéro du boitier :</span>&nbsp; &nbsp;
+				<label for="hd">Numéro du boitier :</span>
 				<select name="hd" id="hd" onchange="saveFields()">
 					<option value="1">Boitier n°1 (HD1)</option>
 					<option value="2">Boitier n°2 (HD2)</option>
 					<option value="3">Boitier n°3 (HD3)</option>
 				</select>
-			</span>
+			</div>
         </div>
-		<div class="help">
-			<span style="text-decoration:underline;">Aide</span>: le code télécommande de votre Freebox se trouve dans Paramètres > Informations Générales.<br />
-			Si vous ne possédez qu'une seule Freebox, laissez le numéro du boitier sur HD1.</p>
-		</div>
 		<div class="metadata">
-			<p>Liens: </p>
+			<div class="help">
+				<strong>Aide :</strong>
+				<ul>
+				<li>Le code télécommande de votre Freebox se trouve dans Paramètres > Informations Générales. Si vous ne possédez qu'une seule Freebox, laissez le numéro du boitier sur HD1.</li>
+				<li>Les changements que vous effectuez aux préférences seront sauvegardés automatiquement lorsque vous quitterez cette page.</li>
+				</ul>
+			</div>
+			<strong>Liens: </strong>
 			<ul>
 				<li><a href="http://outadoc.fr/bug-report/">Report de bug</a></li>
 				<li><a href="http://outadoc.fr/">Site du développeur</a></li>
 				<li><a href="http://twitter.com/#!/outadoc">Twitter du développeur</a></li>
 			</ul>
 	
-			<p>Changelog :</p>
+			<strong>Changelog :</strong>
 			<ul>
 				<li><span style="text-decoration:underline;">1.8</span> : <br />
-				&nbsp;* Changement d'icône<br />
-				&nbsp;* Amélioration de l'appui long. Se déclenche maintenant après 700 millisecondes, que l'utilisateur appuie toujours sur le bouton ou pas<br/>
-				&nbsp;+ Ajout du support de 3 profils indépendants pour contrôler facilement trois Freebox différentes
+				Changement d'icône<br />
+				Amélioration de l'appui long. Se déclenche maintenant après 700 millisecondes, que l'utilisateur appuie toujours sur le bouton ou pas<br/>
+				 Ajout du support de 3 profils indépendants pour contrôler facilement trois Freebox différentes
 	            <li><span style="text-decoration:underline;">1.7.2</span> : <br />
-	            &nbsp;* L'extension s'appelle maintenant FreeStance<br />
-	            &nbsp;* Amélioration des performances</li>
+	            L'extension s'appelle maintenant FreeStance<br />
+	            Amélioration des performances</li>
 				<li><span style="text-decoration:underline;">1.7.1</span> : <br />
-				&nbsp;+ Ajout d'informations dans la page des réglages</li>
+				 Ajout d'informations dans la page des réglages</li>
 				<li><span style="text-decoration:underline;">1.7</span> : <br />
-				&nbsp;+ Support du clic long (même action qu'avec la vraie télécommande)<br />
-				&nbsp;* Amélioration des performances</li>
+				 Support du clic long (même action qu'avec la vraie télécommande)<br />
+				Amélioration des performances</li>
 				<li><span style="text-decoration:underline;">1.6</span> : <br />
-				&nbsp;+ Ajout des touches Play/Pause et Stop</li>
+				 Ajout des touches Play/Pause et Stop</li>
 			</ul>
-			<a href="http://outadoc.fr"><img src="img/logo.png" alt="logo" class="logo" /></a>
 		</div>
 	</body>
 </html>
