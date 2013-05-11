@@ -56,7 +56,13 @@ $('#profile').change(getValues);
 var buttons = $('map area');
 
 for(var i = 0; i < buttons.length; i++) {
-	var key = $(buttons[i]).attr('data-key');
-	$(buttons[i]).mousedown(function() { mousedown(key); });
-	$(buttons[i]).mouseup(function() { mouseup(key); });
+	var currentKey = $(buttons[i]).attr('data-key');
+
+	$(buttons[i]).mousedown({key: currentKey}, function(e) {
+		mousedown(e.data.key);
+	});
+
+	$(buttons[i]).mouseup({key: currentKey}, function(e) {
+		mouseup(e.data.key);
+	});
 }
